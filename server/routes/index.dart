@@ -1,19 +1,20 @@
 import 'package:dart_frog/dart_frog.dart';
-import 'package:postgres/postgres.dart';
-import 'package:shared/shared.dart';
+import 'package:db/db.dart' as db;
+import 'package:shared/shared.dart' as shared;
+import 'package:stormberry/stormberry.dart';
 
 Future<Response> onRequest(RequestContext context) async {
-  final user = User(id: 'asdf', email: 'some@user.com');
+  final db = context.read<Database>();
 
-  final connection = context.read<PostgreSQLConnection>();
+  final user = await db.users.queryUser(1);
 
-  await connection.open();
+  if (user == null) {
+    return Response(body: 'Not Found', statusCode: 404);
+  }
 
-  final result = await connection.query('SELECT NOW()');
+  final sharedUser = shared.User.fromDb(user);
 
-  print(result);
-
-  return Response(
-      body:
-          'Welcome to Dart Frog! ${user.email}. The current time is ${result[0][0]}');
+  return Response.json(
+    body: sharedUser.toJson(),
+  );
 }
