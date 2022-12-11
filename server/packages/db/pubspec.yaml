@@ -1,0 +1,21 @@
+name: db
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+# homepage: https://www.example.com
+
+publish_to: none
+
+environment:
+  sdk: ">=2.18.4 <3.0.0"
+
+dependencies:
+  # stormberry:
+  #   path: E:/WORK/ProjectPerMonth/DartPubOtherPackages/stormberry
+  stormberry:
+      git:
+        url: https://github.com/NirmalAriyathilake/stormberry.git
+        ref: migrate-variables
+dev_dependencies:
+  build_runner: ^2.3.2
+  lints: ^2.0.0
+  test: ^1.16.0
