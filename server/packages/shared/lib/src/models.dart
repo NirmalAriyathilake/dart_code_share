@@ -9,6 +9,7 @@ class User with _$User implements db.UserView {
   const factory User({
     required int id,
     required String name,
+    @Default('') String email
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -16,5 +17,6 @@ class User with _$User implements db.UserView {
   factory User.fromDb(db.User dbUser) => User(
         id: dbUser.id,
         name: dbUser.name,
+        email: dbUser.email ?? '',
       );
 }
