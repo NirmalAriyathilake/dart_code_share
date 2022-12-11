@@ -5,4 +5,4 @@ library db;
 
 export 'src/db_models.dart';
 
-// TODO: Export any libraries intended for clients of this package.
+export 'src/db_models.schema.g.dart';
