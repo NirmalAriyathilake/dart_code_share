@@ -1,4 +1,4 @@
-# Observable Flutter
+# Dart code share
 
 Dart code sharing project based on [Observable Flutter](https://www.youtube.com/playlist?list=PLjxrf2q8roU1GHtc2FCHoEZr_v-LqnTZX) playlist from Flutter youtube channel.
 
