@@ -1,6 +1,6 @@
 # Dart code share
 
-Dart code sharing project based on [Observable Flutter](https://www.youtube.com/playlist?list=PLjxrf2q8roU1GHtc2FCHoEZr_v-LqnTZX) playlist from Flutter youtube channel.
+Dart code sharing project to demonstrate a Flutter client & a Dart server sharing same code through shared packages.
 
 ## Tech: 
     * Dart
